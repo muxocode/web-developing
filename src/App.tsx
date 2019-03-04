@@ -13,17 +13,18 @@ class App extends Component {
     return (
       <div className="App">
         <header id="header" className="App-header expand">
-        Muxo Code
+        <p>Muxo Code</p>
         <Boton type={typeBoton.outlight} onClick={()=>{
-          debugger;
+          let elem = document.getElementsByClassName("transfer")[0] as HTMLElement;
           window.scrollTo(
             {
               'behavior': 'smooth',
-              'top': (document.getElementsByClassName("cuerpo")[0] as HTMLElement).offsetTop
+              'top': elem.offsetTop + elem.offsetHeight
             }
           );
-        }}>Lets Go!</Boton>
+        }}>Empecemos!</Boton>
         </header>
+        <div className="transfer"></div>
           <MenuHorizontal setFixedFromOffset = {()=>{
               let header = document.getElementById("header");
               return header?header.offsetHeight:null;
@@ -57,6 +58,7 @@ class App extends Component {
               <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
           </div>
         </div>
+        <a href="https://www.vecteezy.com">Free vector art via Vecteezy!</a>
       </div> 
     );
   }
